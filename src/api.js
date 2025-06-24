@@ -50,7 +50,10 @@ module.exports = {
 			self.mqttClient.on('message', (topic, message) => {
 				try {
 					if (self.config.verbose) {
-						self.log('debug', `Received MQTT message on topic: ${topic} - Message: ${message ? message.toString() : ''}`)
+						self.log(
+							'debug',
+							`Received MQTT message on topic: ${topic} - Message: ${message ? message.toString() : ''}`,
+						)
 					}
 
 					if (topic) {

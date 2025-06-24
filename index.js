@@ -24,7 +24,7 @@ class vidiuXInstance extends InstanceBase {
 			...feedbacks,
 			...variables,
 			...presets,
-			
+
 			...api,
 		})
 

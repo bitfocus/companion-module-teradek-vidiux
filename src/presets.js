@@ -35,8 +35,8 @@ module.exports = {
 							},
 						},
 					],
-					up: []
-				}
+					up: [],
+				},
 			],
 			feedbacks: [
 				{
@@ -122,8 +122,8 @@ module.exports = {
 							},
 						},
 					],
-					up: []
-				}
+					up: [],
+				},
 			],
 			feedbacks: [
 				{
@@ -295,8 +295,8 @@ module.exports = {
 							},
 						},
 					],
-					up: []
-				}
+					up: [],
+				},
 			],
 			feedbacks: [
 				{
@@ -362,8 +362,8 @@ module.exports = {
 							},
 						},
 					],
-					up: []
-				}
+					up: [],
+				},
 			],
 			feedbacks: [
 				{
