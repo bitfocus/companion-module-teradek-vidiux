@@ -1,14 +1,10 @@
 module.exports = {
-	// ##########################
-	// #### Instance Actions ####
-	// ##########################
-
-	setActions: function (i) {
-		let self = i
+	initActions: function () {
+		let self = this
 		let actions = {}
 
 		actions.recordingControl = {
-			label: 'Recording Control',
+			name: 'Recording Control',
 			options: [
 				{
 					type: 'dropdown',
@@ -27,7 +23,7 @@ module.exports = {
 		}
 
 		actions.streamingControl = {
-			label: 'Streaming Control',
+			name: 'Streaming Control',
 			options: [
 				{
 					type: 'dropdown',
@@ -53,6 +49,6 @@ module.exports = {
 			},
 		}
 
-		return actions
+		self.setActionDefinitions(actions)
 	},
 }

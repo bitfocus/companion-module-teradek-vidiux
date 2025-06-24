@@ -1,22 +1,16 @@
+const { combineRgb } = require('@companion-module/base')
+
 module.exports = {
-	// ##########################
-	// #### Define Feedbacks ####
-	// ##########################
-	setFeedbacks: function (i) {
-		let self = i
+	initFeedbacks: function () {
+		let self = this
 		let feedbacks = {}
 
-		const foregroundColor = self.rgb(255, 255, 255) // White
-		const foregroundColorBlack = self.rgb(0, 0, 0) // Black
-		const backgroundColorRed = self.rgb(255, 0, 0) // Red
-		const backgroundColorGreen = self.rgb(0, 255, 0) // Green
-		const backgroundColorOrange = self.rgb(255, 102, 0) // Orange
-		const backgroundColorBlue = self.rgb(0, 0, 255) // Blue
-		const backgroundColorGray = self.rgb(128, 128, 128) // Gray
+		const foregroundColor = combineRgb(255, 255, 255) // White
+		const backgroundColorRed = combineRgb(255, 0, 0) // Red
 
 		feedbacks.recordingState = {
 			type: 'boolean',
-			label: 'Recording',
+			name: 'Recording',
 			description: 'Indicate Device Recording State',
 			style: {
 				color: foregroundColor,
@@ -51,7 +45,7 @@ module.exports = {
 
 		feedbacks.streamingState = {
 			type: 'boolean',
-			label: 'Streaming',
+			name: 'Streaming',
 			description: 'Indicate Device Streaming State',
 			style: {
 				color: foregroundColor,
@@ -82,6 +76,6 @@ module.exports = {
 			},
 		}
 
-		return feedbacks
+		self.setFeedbackDefinitions(feedbacks)
 	},
 }

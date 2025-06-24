@@ -18,7 +18,7 @@
 		"type": "node22",
 		"api": "nodejs-ipc",
 		"apiVersion": "0.0.0",
-		"entrypoint": "../src/index.js"
+		"entrypoint": "../index.js"
 	},
 	"manufacturer": "Teradek",
 	"products": ["VidiU X"],

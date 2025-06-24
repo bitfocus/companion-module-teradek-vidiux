@@ -1,42 +1,46 @@
+const { combineRgb } = require('@companion-module/base')
+const { type } = require('os')
+
 module.exports = {
-	setPresets: function (i) {
-		let self = i
+	initPresets: function () {
+		let self = this
 		let presets = []
 
-		const foregroundColor = self.rgb(255, 255, 255) // White
-		const foregroundColorBlack = self.rgb(0, 0, 0) // Black
-		const backgroundColorRed = self.rgb(255, 0, 0) // Red
-		const backgroundColorGreen = self.rgb(0, 255, 0) // Green
-		const backgroundColorYellow = self.rgb(255, 191, 0) // Yellow
-		const backgroundColorOrange = self.rgb(255, 102, 0) // Orange
-		const backgroundColorBlue = self.rgb(0, 0, 255) // Blue
-		const backgroundColorGray = self.rgb(128, 128, 128) // Gray
-
-		// ########################
-		// #### System Presets ####
-		// ########################
+		const foregroundColor = combineRgb(255, 255, 255) // White
+		const foregroundColorBlack = combineRgb(0, 0, 0) // Black
+		const backgroundColorRed = combineRgb(255, 0, 0) // Red
+		const backgroundColorGreen = combineRgb(0, 255, 0) // Green
+		const backgroundColorYellow = combineRgb(255, 191, 0) // Yellow
+		const backgroundColorOrange = combineRgb(255, 102, 0) // Orange
+		const backgroundColorBlue = combineRgb(0, 0, 255) // Blue
+		const backgroundColorGray = combineRgb(128, 128, 128) // Gray
 
 		presets.push({
 			category: 'Recording',
-			label: 'Recording Start',
-			bank: {
-				style: 'text',
+			name: 'Recording Start',
+			type: 'button',
+			style: {
 				text: 'REC\\nSTART',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(0, 0, 0),
+				bgcolor: combineRgb(0, 0, 0),
 			},
-			actions: [
+			steps: [
 				{
-					action: 'recordingControl',
-					options: {
-						command: 'start',
-					},
-				},
+					down: [
+						{
+							actionId: 'recordingControl',
+							options: {
+								command: 'start',
+							},
+						},
+					],
+					up: []
+				}
 			],
 			feedbacks: [
 				{
-					type: 'recordingState',
+					feedbackId: 'recordingState',
 					options: {
 						option: 'Offline',
 					},
@@ -46,7 +50,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'recordingState',
+					feedbackId: 'recordingState',
 					options: {
 						option: 'Ready',
 					},
@@ -56,7 +60,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'recordingState',
+					feedbackId: 'recordingState',
 					options: {
 						option: 'Not Ready',
 					},
@@ -66,7 +70,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'recordingState',
+					feedbackId: 'recordingState',
 					options: {
 						option: 'Invalid',
 					},
@@ -76,7 +80,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'recordingState',
+					feedbackId: 'recordingState',
 					options: {
 						option: 'Preparing',
 					},
@@ -86,7 +90,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'recordingState',
+					feedbackId: 'recordingState',
 					options: {
 						option: 'Recording',
 					},
@@ -100,25 +104,30 @@ module.exports = {
 
 		presets.push({
 			category: 'Recording',
-			label: 'Recording Stop',
-			bank: {
-				style: 'text',
+			name: 'Recording Stop',
+			type: 'button',
+			style: {
 				text: 'REC\\nSTOP',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(0, 0, 0),
+				bgcolor: combineRgb(0, 0, 0),
 			},
-			actions: [
+			steps: [
 				{
-					action: 'recordingControl',
-					options: {
-						command: 'stop',
-					},
-				},
+					down: [
+						{
+							actionId: 'recordingControl',
+							options: {
+								command: 'stop',
+							},
+						},
+					],
+					up: []
+				}
 			],
 			feedbacks: [
 				{
-					type: 'recordingState',
+					feedbackId: 'recordingState',
 					options: {
 						option: 'Offline',
 					},
@@ -128,7 +137,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'recordingState',
+					feedbackId: 'recordingState',
 					options: {
 						option: 'Ready',
 					},
@@ -138,7 +147,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'recordingState',
+					feedbackId: 'recordingState',
 					options: {
 						option: 'Not Ready',
 					},
@@ -148,7 +157,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'recordingState',
+					feedbackId: 'recordingState',
 					options: {
 						option: 'Invalid',
 					},
@@ -158,7 +167,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'recordingState',
+					feedbackId: 'recordingState',
 					options: {
 						option: 'Preparing',
 					},
@@ -168,7 +177,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'recordingState',
+					feedbackId: 'recordingState',
 					options: {
 						option: 'Recording',
 					},
@@ -182,17 +191,17 @@ module.exports = {
 
 		presets.push({
 			category: 'Recording',
-			label: 'Recording State',
-			bank: {
-				style: 'text',
+			name: 'Recording State',
+			type: 'button',
+			style: {
 				text: '$(teradek-vidiux:recording_state)',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(0, 0, 0),
+				bgcolor: combineRgb(0, 0, 0),
 			},
 			feedbacks: [
 				{
-					type: 'recordingState',
+					feedbackId: 'recordingState',
 					options: {
 						option: 'Offline',
 					},
@@ -202,7 +211,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'recordingState',
+					feedbackId: 'recordingState',
 					options: {
 						option: 'Ready',
 					},
@@ -212,7 +221,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'recordingState',
+					feedbackId: 'recordingState',
 					options: {
 						option: 'Not Ready',
 					},
@@ -222,7 +231,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'recordingState',
+					feedbackId: 'recordingState',
 					options: {
 						option: 'Invalid',
 					},
@@ -232,7 +241,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'recordingState',
+					feedbackId: 'recordingState',
 					options: {
 						option: 'Preparing',
 					},
@@ -242,7 +251,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'recordingState',
+					feedbackId: 'recordingState',
 					options: {
 						option: 'Recording',
 					},
@@ -256,37 +265,42 @@ module.exports = {
 
 		presets.push({
 			category: 'Recording',
-			label: 'Recording Uptime',
-			bank: {
-				style: 'text',
+			name: 'Recording Uptime',
+			type: 'button',
+			style: {
 				text: '$(teradek-vidiux:recording_uptime)',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(0, 0, 0),
+				bgcolor: combineRgb(0, 0, 0),
 			},
 		})
 
 		presets.push({
 			category: 'Streaming',
-			label: 'Streaming Start/Publish',
-			bank: {
-				style: 'text',
+			name: 'Streaming Start/Publish',
+			type: 'button',
+			style: {
 				text: 'STREAM\\nSTART',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(0, 0, 0),
+				bgcolor: combineRgb(0, 0, 0),
 			},
-			actions: [
+			steps: [
 				{
-					action: 'streamingControl',
-					options: {
-						command: 'publish',
-					},
-				},
+					down: [
+						{
+							actionId: 'streamingControl',
+							options: {
+								command: 'publish',
+							},
+						},
+					],
+					up: []
+				}
 			],
 			feedbacks: [
 				{
-					type: 'streamingState',
+					feedbackId: 'streamingState',
 					options: {
 						option: 'Ready',
 					},
@@ -296,7 +310,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'streamingState',
+					feedbackId: 'streamingState',
 					options: {
 						option: 'Invalid',
 					},
@@ -306,7 +320,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'streamingState',
+					feedbackId: 'streamingState',
 					options: {
 						option: 'Playing',
 					},
@@ -316,7 +330,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'streamingState',
+					feedbackId: 'streamingState',
 					options: {
 						option: 'Live',
 					},
@@ -330,25 +344,30 @@ module.exports = {
 
 		presets.push({
 			category: 'Streaming',
-			label: 'Streaming Stop/Unpublish',
-			bank: {
-				style: 'text',
+			name: 'Streaming Stop/Unpublish',
+			type: 'button',
+			style: {
 				text: 'STREAM\\nSTOP',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(0, 0, 0),
+				bgcolor: combineRgb(0, 0, 0),
 			},
-			actions: [
+			steps: [
 				{
-					action: 'streamingControl',
-					options: {
-						command: 'unpublish',
-					},
-				},
+					down: [
+						{
+							actionId: 'streamingControl',
+							options: {
+								command: 'unpublish',
+							},
+						},
+					],
+					up: []
+				}
 			],
 			feedbacks: [
 				{
-					type: 'streamingState',
+					feedbackId: 'streamingState',
 					options: {
 						option: 'Ready',
 					},
@@ -358,7 +377,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'streamingState',
+					feedbackId: 'streamingState',
 					options: {
 						option: 'Invalid',
 					},
@@ -368,7 +387,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'streamingState',
+					feedbackId: 'streamingState',
 					options: {
 						option: 'Playing',
 					},
@@ -378,7 +397,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'streamingState',
+					feedbackId: 'streamingState',
 					options: {
 						option: 'Live',
 					},
@@ -392,17 +411,17 @@ module.exports = {
 
 		presets.push({
 			category: 'Streaming',
-			label: 'Streaming State',
-			bank: {
-				style: 'text',
+			name: 'Streaming State',
+			type: 'button',
+			style: {
 				text: '$(teradek-vidiux:streaming_state)',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(0, 0, 0),
+				bgcolor: combineRgb(0, 0, 0),
 			},
 			feedbacks: [
 				{
-					type: 'streamingState',
+					feedbackId: 'streamingState',
 					options: {
 						option: 'Ready',
 					},
@@ -412,7 +431,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'streamingState',
+					feedbackId: 'streamingState',
 					options: {
 						option: 'Invalid',
 					},
@@ -422,7 +441,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'streamingState',
+					feedbackId: 'streamingState',
 					options: {
 						option: 'Playing',
 					},
@@ -432,7 +451,7 @@ module.exports = {
 					},
 				},
 				{
-					type: 'streamingState',
+					feedbackId: 'streamingState',
 					options: {
 						option: 'Live',
 					},
@@ -446,16 +465,16 @@ module.exports = {
 
 		presets.push({
 			category: 'Streaming',
-			label: 'Streaming Uptime',
-			bank: {
-				style: 'text',
+			name: 'Streaming Uptime',
+			type: 'button',
+			style: {
 				text: '$(teradek-vidiux:streaming_uptime)',
 				size: '14',
 				color: '16777215',
-				bgcolor: self.rgb(0, 0, 0),
+				bgcolor: combineRgb(0, 0, 0),
 			},
 		})
 
-		return presets
+		self.setPresetDefinitions(presets)
 	},
 }
