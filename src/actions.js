@@ -4,8 +4,8 @@ module.exports = {
 	// ##########################
 
 	setActions: function (i) {
-		let self = i;
-		let actions = {};
+		let self = i
+		let actions = {}
 
 		actions.recordingControl = {
 			label: 'Recording Control',
@@ -17,14 +17,14 @@ module.exports = {
 					default: 'start',
 					choices: [
 						{ id: 'start', label: 'Start' },
-						{ id: 'stop', label: 'Stop' }
-					]
-				}
+						{ id: 'stop', label: 'Stop' },
+					],
+				},
 			],
 			callback: function (action, bank) {
-				self.sendCommand(self.recPrefix + '/' + action.options.command, {});
-			}
-		};
+				self.sendCommand(self.recPrefix + '/' + action.options.command, {})
+			},
+		}
 
 		actions.streamingControl = {
 			label: 'Streaming Control',
@@ -44,15 +44,15 @@ module.exports = {
 						{ id: 'cancel', label: 'Cancel' },
 						{ id: 'preview', label: 'Preview' },
 						{ id: 'endpreview', label: 'End Preview' },
-						{ id: 'complete', label: 'Complete' }
-					]
-				}
+						{ id: 'complete', label: 'Complete' },
+					],
+				},
 			],
 			callback: function (action, bank) {
-				self.sendCommand(self.streamPrefix + '/' + action.options.command, {});
-			}
-		};
+				self.sendCommand(self.streamPrefix + '/' + action.options.command, {})
+			},
+		}
 
-		return actions;
-	}
+		return actions
+	},
 }

@@ -1,16 +1,16 @@
 module.exports = {
 	setPresets: function (i) {
-		let self = i;
-		let presets = [];
+		let self = i
+		let presets = []
 
-		const foregroundColor = self.rgb(255, 255, 255); // White
-		const foregroundColorBlack = self.rgb(0, 0, 0); // Black
-		const backgroundColorRed = self.rgb(255, 0, 0); // Red
-		const backgroundColorGreen = self.rgb(0, 255, 0); // Green
-		const backgroundColorYellow = self.rgb(255, 191, 0); // Yellow
-		const backgroundColorOrange = self.rgb(255, 102, 0); // Orange
-		const backgroundColorBlue = self.rgb(0, 0, 255); // Blue
-		const backgroundColorGray = self.rgb(128, 128, 128); // Gray
+		const foregroundColor = self.rgb(255, 255, 255) // White
+		const foregroundColorBlack = self.rgb(0, 0, 0) // Black
+		const backgroundColorRed = self.rgb(255, 0, 0) // Red
+		const backgroundColorGreen = self.rgb(0, 255, 0) // Green
+		const backgroundColorYellow = self.rgb(255, 191, 0) // Yellow
+		const backgroundColorOrange = self.rgb(255, 102, 0) // Orange
+		const backgroundColorBlue = self.rgb(0, 0, 255) // Blue
+		const backgroundColorGray = self.rgb(128, 128, 128) // Gray
 
 		// ########################
 		// #### System Presets ####
@@ -30,9 +30,9 @@ module.exports = {
 				{
 					action: 'recordingControl',
 					options: {
-						command: 'start'
-					}
-				}
+						command: 'start',
+					},
+				},
 			],
 			feedbacks: [
 				{
@@ -42,8 +42,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorBlue
-					}
+						bgcolor: backgroundColorBlue,
+					},
 				},
 				{
 					type: 'recordingState',
@@ -52,8 +52,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColorBlack,
-						bgcolor: backgroundColorGreen
-					}
+						bgcolor: backgroundColorGreen,
+					},
 				},
 				{
 					type: 'recordingState',
@@ -62,8 +62,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorGray
-					}
+						bgcolor: backgroundColorGray,
+					},
 				},
 				{
 					type: 'recordingState',
@@ -72,8 +72,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorYellow
-					}
+						bgcolor: backgroundColorYellow,
+					},
 				},
 				{
 					type: 'recordingState',
@@ -82,8 +82,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorOrange
-					}
+						bgcolor: backgroundColorOrange,
+					},
 				},
 				{
 					type: 'recordingState',
@@ -92,11 +92,11 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorRed
-					}
-				}
-			]
-		});
+						bgcolor: backgroundColorRed,
+					},
+				},
+			],
+		})
 
 		presets.push({
 			category: 'Recording',
@@ -112,9 +112,9 @@ module.exports = {
 				{
 					action: 'recordingControl',
 					options: {
-						command: 'stop'
-					}
-				}
+						command: 'stop',
+					},
+				},
 			],
 			feedbacks: [
 				{
@@ -124,8 +124,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorBlue
-					}
+						bgcolor: backgroundColorBlue,
+					},
 				},
 				{
 					type: 'recordingState',
@@ -134,8 +134,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColorBlack,
-						bgcolor: backgroundColorGreen
-					}
+						bgcolor: backgroundColorGreen,
+					},
 				},
 				{
 					type: 'recordingState',
@@ -144,8 +144,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorGray
-					}
+						bgcolor: backgroundColorGray,
+					},
 				},
 				{
 					type: 'recordingState',
@@ -154,8 +154,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorYellow
-					}
+						bgcolor: backgroundColorYellow,
+					},
 				},
 				{
 					type: 'recordingState',
@@ -164,8 +164,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorOrange
-					}
+						bgcolor: backgroundColorOrange,
+					},
 				},
 				{
 					type: 'recordingState',
@@ -174,11 +174,11 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorRed
-					}
-				}
-			]
-		});
+						bgcolor: backgroundColorRed,
+					},
+				},
+			],
+		})
 
 		presets.push({
 			category: 'Recording',
@@ -198,8 +198,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorBlue
-					}
+						bgcolor: backgroundColorBlue,
+					},
 				},
 				{
 					type: 'recordingState',
@@ -208,8 +208,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColorBlack,
-						bgcolor: backgroundColorGreen
-					}
+						bgcolor: backgroundColorGreen,
+					},
 				},
 				{
 					type: 'recordingState',
@@ -218,8 +218,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorGray
-					}
+						bgcolor: backgroundColorGray,
+					},
 				},
 				{
 					type: 'recordingState',
@@ -228,8 +228,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorYellow
-					}
+						bgcolor: backgroundColorYellow,
+					},
 				},
 				{
 					type: 'recordingState',
@@ -238,8 +238,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorOrange
-					}
+						bgcolor: backgroundColorOrange,
+					},
 				},
 				{
 					type: 'recordingState',
@@ -248,11 +248,11 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorRed
-					}
-				}
-			]
-		});
+						bgcolor: backgroundColorRed,
+					},
+				},
+			],
+		})
 
 		presets.push({
 			category: 'Recording',
@@ -263,8 +263,8 @@ module.exports = {
 				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(0, 0, 0),
-			}
-		});
+			},
+		})
 
 		presets.push({
 			category: 'Streaming',
@@ -280,9 +280,9 @@ module.exports = {
 				{
 					action: 'streamingControl',
 					options: {
-						command: 'publish'
-					}
-				}
+						command: 'publish',
+					},
+				},
 			],
 			feedbacks: [
 				{
@@ -292,8 +292,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColorBlack,
-						bgcolor: backgroundColorGreen
-					}
+						bgcolor: backgroundColorGreen,
+					},
 				},
 				{
 					type: 'streamingState',
@@ -302,8 +302,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorYellow
-					}
+						bgcolor: backgroundColorYellow,
+					},
 				},
 				{
 					type: 'streamingState',
@@ -312,8 +312,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorBlue
-					}
+						bgcolor: backgroundColorBlue,
+					},
 				},
 				{
 					type: 'streamingState',
@@ -322,11 +322,11 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorRed
-					}
-				}
-			]
-		});
+						bgcolor: backgroundColorRed,
+					},
+				},
+			],
+		})
 
 		presets.push({
 			category: 'Streaming',
@@ -342,9 +342,9 @@ module.exports = {
 				{
 					action: 'streamingControl',
 					options: {
-						command: 'unpublish'
-					}
-				}
+						command: 'unpublish',
+					},
+				},
 			],
 			feedbacks: [
 				{
@@ -354,8 +354,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColorBlack,
-						bgcolor: backgroundColorGreen
-					}
+						bgcolor: backgroundColorGreen,
+					},
 				},
 				{
 					type: 'streamingState',
@@ -364,8 +364,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorYellow
-					}
+						bgcolor: backgroundColorYellow,
+					},
 				},
 				{
 					type: 'streamingState',
@@ -374,8 +374,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorBlue
-					}
+						bgcolor: backgroundColorBlue,
+					},
 				},
 				{
 					type: 'streamingState',
@@ -384,11 +384,11 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorRed
-					}
-				}
-			]
-		});
+						bgcolor: backgroundColorRed,
+					},
+				},
+			],
+		})
 
 		presets.push({
 			category: 'Streaming',
@@ -408,8 +408,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColorBlack,
-						bgcolor: backgroundColorGreen
-					}
+						bgcolor: backgroundColorGreen,
+					},
 				},
 				{
 					type: 'streamingState',
@@ -418,8 +418,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorYellow
-					}
+						bgcolor: backgroundColorYellow,
+					},
 				},
 				{
 					type: 'streamingState',
@@ -428,8 +428,8 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorBlue
-					}
+						bgcolor: backgroundColorBlue,
+					},
 				},
 				{
 					type: 'streamingState',
@@ -438,11 +438,11 @@ module.exports = {
 					},
 					style: {
 						color: foregroundColor,
-						bgcolor: backgroundColorRed
-					}
-				}
-			]
-		});
+						bgcolor: backgroundColorRed,
+					},
+				},
+			],
+		})
 
 		presets.push({
 			category: 'Streaming',
@@ -453,9 +453,9 @@ module.exports = {
 				size: '14',
 				color: '16777215',
 				bgcolor: self.rgb(0, 0, 0),
-			}
-		});
+			},
+		})
 
-		return presets;
-	}
+		return presets
+	},
 }
