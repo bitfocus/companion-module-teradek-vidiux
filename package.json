@@ -15,7 +15,7 @@
 		"mqtt": "^4.3.5"
 	},
 	"devDependencies": {
-		"@companion-module/tools": "^2.3.0",
+		"@companion-module/tools": "^2.6.1",
 		"prettier": "^3.6.0"
 	}
 }
